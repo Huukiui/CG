@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="styleguide.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="fractals">
+      <div class="div">
+        <div class="overlap">
+          <div class="text-wrapper">SOFTGRAPHICS</div>
+          <div class="text-wrapper-2">EN</div>
+          <div class="text-wrapper-3">PL</div>
+          <div class="text-wrapper-4">UK</div>
+          <img class="r" src="img/r-3.png" />
+          <div class="home" onclick="location.replace('/main/index.html')">Home</div>
+          <div class="text-wrapper-5" onclick="location.replace('/t1/main_tutorial.html')">Tutorials</div>
+          <div class="text-wrapper-6" onclick="location.replace('/fractals/index.html')">Services</div>
+        </div>
+        <div class="fractal">Fractals</div>
+        <div class="text-wrapper-7" onclick="location.replace('/MovingObjects/index.html')">Moving objects</div>
+        <div class="text-wrapper-8" onclick="location.replace('/colors/index.html')">Color models</div>
+        <img class="vector" src="img/vector-4.svg" />
+        <img class="vector-2" src="img/vector-4.svg" />
+        <div class="overlap-group">
+          <img class="rectangle" src="img/rectangle-98.svg" />
+          <img class="rectangle-2" src="img/rectangle-99.svg" />
+          <img class="rectangle-3" src="img/rectangle-100.svg" />
+          <img class="removebg-preview" src="img/removebg-preview-2.png" />
+          <img class="OIP-removebg-preview" src="img/oip-removebg-preview-2.png" />
+          <img
+            class="twitter-icon-white"
+            src="img/twitter-icon-white-transparent-11549537259z0sowbg17j-removebg-pr.png"
+          />
+          <div class="text-wrapper-9">Follow us</div>
+          <div class="copyright"><p class="element-all-rights">© 2023 All Rights Reserved</p></div>
+          <div class="menu-footer">
+            <div class="text-wrapper-10">Privacy Policy</div>
+            <div class="text-wrapper-10">Terms of Use</div>
+            <div class="text-wrapper-10">Legal</div>
+            <div class="text-wrapper-10">Site Map</div>
+          </div>
+          <div class="phone-number"><p class="element">+380 97 056 71 56</p></div>
+          <div class="text-wrapper-11">Call us</div>
+          <img class="line" src="img/line-16.svg" />
+          <p class="subscribe-to-stay">
+            Subscribe to stay tuned for new computer graphics and latest updates. Let&#39;s do it!
+          </p>
+          <div class="subscribe">
+            <div class="group">
+              <div class="div-wrapper">
+                <input type="text" class="input-field" placeholder="Enter your email Address">
+              </div>
+            </div>
+            <button class="button">
+              <div class="text-wrapper-32">Subscribe</div>
+            </button>
+          </div>
+        </div>
+        <div class="overlap-2">
+          <select id="selectColor" class="rectangle-4">
+            <optgroup>
+              <option value="" selected disabled>Colors method</option>
+            </optgroup>
+            <optgroup>
+              <option value="0"class="text-wrapper-18">Iteration method</option>
+            </optgroup>
+            <optgroup>
+              <option value="1" class="text-wrapper-18">Complex to color</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="overlap-3">
+          
+          <img class="polygon" src="img/polygon-1.svg" />
+          <select id="selec" class="rectangle-8">
+            <optgroup>
+              <option value="" selected disabled class="text-wrapper-18">Fractal type</option>
+            </optgroup>
+            <optgroup>
+              <option value="1"class="text-wrapper-18">Ice fractal</option>
+            </optgroup>
+            <optgroup>
+              <option value="2" class="text-wrapper-18">Fractal z*sin(z)</option>
+            </optgroup>
+            <optgroup>
+              <option value="3" class="text-wrapper-18">Fractal sin(z)*cos(z)</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="overlap-10">
+          <div class="text-wrapper-20">Iterations</div>
+          <input type="text" id="it" class="rectangle-55"></input>
+        </div>
+        <button id="create" class="overlap-4"><div class="text-wrapper-19">Create</div></button>
+        <div class="overlap-5">
+          <div class="text-wrapper-20">Scale</div>
+          <div class="slider-container">
+            <input type="range" id="slider" min="0" max="10" value="5">
+            <div id="slider-value">5</div>
+          </div>
+        </div>
+        <div class="image-wrapper"><canvas class="image-2" id="fractalCanvas" width = "700" height = "550"></canvas></div>
+      </div>
+      <button id="saveButton" class="overlap-44"><div class="text-wrapper-199">Save</div></button>
+      
+    </div>
+    <script>
+      var slider = document.getElementById("slider");
+      var button = document.getElementById("create");
+      var sliderValue = document.getElementById("slider-value");
+      var button2 = document.getElementById("saveButton");
+
+      button.addEventListener('click', function() {
+        var selector = document.getElementById("selec");
+        var value = selector.value;
+        var ctx = canvas.getContext('2d');
+        let canv = document.getElementById("fractalCanvas");
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        var Colorselector = document.getElementById("selectColor");
+        var colorChoice = Colorselector.value
+
+        var itInput = document.getElementById("it");
+        var iterations = itInput.value;
+        if(value != 1){
+          if (isNaN(iterations) || iterations <= 0) {
+       
+          itInput.style.border = "2px solid red";
+          
+          alert("Please enter a positive number for iterations.");
+          return; 
+          } else {
+            
+              itInput.style.border = "";
+          }
+        }
+
+        var intSlider = parseInt(slider.value, 10);
+        
+
+        if(value == 1){
+            initialize();
+        }else if(value == 2){
+            
+            if(colorChoice == 0){
+              generateSinFractal(700, 550, -intSlider, intSlider, -intSlider, intSlider, 0, iterations);
+            }else if(colorChoice == 1){
+              generateSinFractal(700, 550, -intSlider, intSlider, -intSlider, intSlider, 1, iterations);
+            }
+        }else if(value == 3){
+            
+          if(colorChoice == 0){
+              generateCosFractal(700, 550, -intSlider, intSlider, -intSlider, intSlider, 0, iterations);
+            }else if(colorChoice == 1){
+              generateCosFractal(700, 550, -intSlider, intSlider, -intSlider, intSlider, 1, iterations);
+            }
+        }
+        });
+
+        button2.addEventListener('click', function() {
+          var canvas = document.getElementById("fractalCanvas");
+          var link = document.createElement('a');
+
+          link.href = canvas.toDataURL(); 
+          link.download = 'fractal.png'; 
+
+          link.click(); 
+      }
+      );
+
+        slider.addEventListener("input", function() {
+            sliderValue.innerHTML = slider.value;
+        });
+    </script>
+      </div>
+    </div>
+    <script src="/fractals/fractalDrawer.js"></script>
+  </body>
+</html>

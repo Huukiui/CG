@@ -1,0 +1,524 @@
+.main-page {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.main-page .overlap-group-wrapper {
+  background-color: #ffffff;
+  overflow: hidden;
+  border: 1px solid;
+  border-color: #ffffff;
+  width: 1920px;
+  height: 1080px;
+}
+
+.main-page .overlap-group {
+  position: relative;
+  width: 2012px;
+  height: 1080px;
+}
+
+.main-page .background {
+  position: absolute;
+  width: 1920px;
+  height: 1080px;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+.main-page .home {
+  position: absolute;
+  width: 96px;
+  height: 36px;
+  top: 48px;
+  left: 767px;
+  text-shadow: 0px 4px 4px #00000040;
+  -webkit-text-stroke: 1px #000000;
+  font-family: "Jacques Francois", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  text-decoration: underline;
+  text-decoration-color: #ffffff; 
+}
+
+
+.main-page .text-wrapper {
+  position: absolute;
+  width: 313px;
+  top: 49px;
+  left: 28px;
+  font-family: "Jacques Francois", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.main-page .div {
+  position: absolute;
+  width: 108px;
+  top: 43px;
+  left: 1543px;
+  font-family: "Jacques Francois", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  text-decoration: underline;
+}
+
+.main-page .text-wrapper-2 {
+  position: absolute;
+  width: 108px;
+  top: 43px;
+  left: 1651px;
+  font-family: "Jacques Francois", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  z-index: 2; /* Встановлюємо велике значення z-index, щоб вивести на передній план */
+}
+
+.main-page .text-wrapper-3 {
+  position: absolute;
+  width: 108px;
+  top: 43px;
+  left: 1759px;
+  font-family: "Jacques Francois", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  z-index: 2; /* Встановлюємо велике значення z-index, щоб вивести на передній план */
+}
+
+
+.main-page .text-wrapper-2:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.main-page .text-wrapper-3:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.main-page .text-wrapper-4 {
+  position: absolute;
+  width: 166px;
+  top: 48px;
+  left: 894px;
+  font-family: "Jacques Francois", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  z-index: 2;
+}
+
+.main-page .text-wrapper-4:hover{
+  cursor: pointer;
+  text-shadow: 0px 4px 4px #00000040;
+  -webkit-text-stroke: 1px #000000;
+  font-family: "Jacques Francois", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  text-decoration: underline;
+  text-decoration-color: #ffffff; 
+}
+.main-page .text-wrapper-5:hover{
+  cursor: pointer;
+  text-shadow: 0px 4px 4px #00000040;
+  -webkit-text-stroke: 1px #000000;
+  font-family: "Jacques Francois", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  text-decoration: underline;
+  text-decoration-color: #ffffff; 
+}
+
+.main-page .text-wrapper-5 {
+  position: absolute;
+  width: 166px;
+  top: 48px;
+  left: 1070px;
+  font-family: "Jacques Francois", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  z-index: 2;
+}
+
+.main-page .text-wrapper-4 {
+  cursor: pointer;
+}
+
+.main-page .header-line {
+  position: absolute;
+  width: 1920px;
+  height: 104px;
+  top: 0;
+  left: 0;
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+  border-color: #ffffff;
+}
+
+.main-page .footer-line {
+  position: absolute;
+  width: 960px;
+  height: 104px;
+  top: 976px;
+  left: 0;
+  border-top-width: 0.5px;
+  border-top-style: solid;
+  border-right-width: 0.5px;
+  border-right-style: solid;
+  border-color: #ffffff;
+}
+
+.main-page .footer-line-2 {
+  position: absolute;
+  width: 960px;
+  height: 104px;
+  top: 976px;
+  left: 960px;
+  border-top-width: 0.5px;
+  border-top-style: solid;
+  border-color: #ffffff;
+}
+
+
+.main-page .p {
+  position: absolute;
+  width: 546px;
+  top: 313px;
+  left: 113px;
+  text-shadow: 0px 4px 4px #00000040;
+  font-family: "Jacques Francois", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 64px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.main-page .rectangle {
+  position: absolute;
+  width: 546px;
+  height: 466px;
+  top: 301px;
+  left: 113px;
+  border: 3px solid;
+  border-color: #ffffff;
+}
+
+.main-page .fractal-back {
+  position: absolute;
+  width: 614px;
+  height: 764px;
+  top: 164px;
+  left: 1306px;
+  object-fit: cover;
+}
+
+.main-page .rectangle-2 {
+  position: absolute;
+  width: 218px;
+  height: 76px;
+  top: 263px;
+  left: 1335px;
+  background-color: #0000005c;
+  border-radius: 200px;
+  box-shadow: inset 0px 4px 4px #00000040;
+}
+
+.main-page .text-wrapper-6 {
+  position: absolute;
+  width: 210px;
+  top: 278px;
+  left: 1335px;
+  background: linear-gradient(
+    180deg,
+    rgb(217, 217, 217) 0%,
+    rgba(217, 217, 217, 0.92) 77.08%,
+    rgba(217, 217, 217, 0) 100%
+  );
+  -webkit-background-clip: text !important;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  font-family: "Jacques Francois", Helvetica;
+  font-weight: 400;
+  color: transparent;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+  width: 218px;
+  height: 76px;
+  top: 263px;
+  left: 1335px;
+  background-color: #0000005c;
+  border-radius: 200px;
+  box-shadow: inset 0px 4px 4px #00000040;
+}
+
+.main-page .rectangle-3 {
+  position: absolute;
+  width: 218px;
+  height: 76px;
+  top: 767px;
+  left: 1335px;
+  background-color: #0000005c;
+  border-radius: 200px;
+  box-shadow: inset 0px 4px 4px #00000040;
+}
+
+.main-page .image {
+  width: 432px;
+  height: 179px;
+  top: 449px;
+  left: 869px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.main-page .text-wrapper-7 {
+  position: absolute;
+  width: 308px;
+  top: 500px;
+  left: 941px;
+  font-family: "Jacques Francois", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 40px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.main-page .rectangle-4 {
+  position: absolute;
+  width: 218px;
+  height: 76px;
+  top: 508px;
+  left: 1335px;
+  background-color: #0000005c;
+  border-radius: 200px;
+  box-shadow: inset 0px 4px 4px #00000040;
+}
+
+.main-page .img {
+  width: 424px;
+  height: 171px;
+  top: 216px;
+  left: 873px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.main-page .text-wrapper-8 {
+  position: absolute;
+  width: 308px;
+  top: 267px;
+  left: 928px;
+  font-family: "Jacques Francois", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 40px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.main-page .text-wrapper-9 {
+  top: 525px;
+  position: absolute;
+  width: 210px;
+  left: 1339px;
+  background: linear-gradient(
+    180deg,
+    rgb(217, 217, 217) 0%,
+    rgba(217, 217, 217, 0.92) 65.1%,
+    rgba(217, 217, 217, 0) 100%
+  );
+  -webkit-background-clip: text !important;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  font-family: "Jacques Francois", Helvetica;
+  font-weight: 400;
+  color: transparent;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+  width: 218px;
+  height: 76px;
+  top: 508px;
+  left: 1335px;
+  background-color: #0000005c;
+  border-radius: 200px;
+  box-shadow: inset 0px 4px 4px #00000040;
+}
+
+.main-page .text-wrapper-10 {
+  top: 787px;
+  position: absolute;
+  width: 210px;
+  left: 1339px;
+  background: linear-gradient(
+    180deg,
+    rgb(217, 217, 217) 0%,
+    rgba(217, 217, 217, 0.92) 65.1%,
+    rgba(217, 217, 217, 0) 100%
+  );
+  -webkit-background-clip: text !important;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  font-family: "Jacques Francois", Helvetica;
+  font-weight: 400;
+  color: transparent;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+  width: 218px;
+  height: 76px;
+  top: 767px;
+  left: 1335px;
+  background-color: #0000005c;
+  border-radius: 200px;
+  box-shadow: inset 0px 4px 4px #00000040;
+}
+
+.main-page .image-2 {
+  width: 424px;
+  height: 171px;
+  top: 702px;
+  left: 870px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.main-page .text-wrapper-11 {
+  position: absolute;
+  width: 308px;
+  top: 760px;
+  left: 924px;
+  font-family: "Jacques Francois", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 40px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.main-page .r {
+  position: absolute;
+  width: 33px;
+  height: 33px;
+  top: 48px;
+  left: 1474px;
+  object-fit: cover;
+}
+
+.main-page .removebg-preview {
+  position: absolute;
+  width: 104px;
+  height: 73px;
+  top: 991px;
+  left: 35px;
+  object-fit: cover;
+}
+
+.main-page .removebg-preview:hover {
+  cursor: pointer;
+}
+
+.main-page .OIP-removebg-preview:hover {
+  cursor: pointer;
+}
+
+.main-page .twitter-icon-white:hover {
+  cursor: pointer;
+}
+
+.main-page .OIP-removebg-preview {
+  position: absolute;
+  width: 113px;
+  height: 77px;
+  top: 987px;
+  left: 254px;
+  object-fit: cover;
+}
+
+.main-page .text-wrapper-12 {
+  position: absolute;
+  width: 642px;
+  top: 999px;
+  left: 1370px;
+  font-family: "Jacques Francois", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 40px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.main-page .element-middle {
+  position: absolute;
+  width: 34px;
+  height: 29px;
+  top: 991px;
+  left: 1869px;
+  object-fit: cover;
+}
+
+.main-page .twitter-icon-white {
+  position: absolute;
+  width: 74px;
+  height: 76px;
+  top: 988px;
+  left: 159px;
+  object-fit: cover;
+}
+

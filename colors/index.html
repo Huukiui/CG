@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="styleguide.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="color-schemes">
+      <div class="div">
+        <div class="overlap">
+          <input type="file" id="imageInput" accept="image/*" style="display: none;"> 
+          <button id="loadButton" class="overlap-group">
+            <div class="text-wrapper">Load</div>
+            <img class="vector" src="img/vector-7.svg" />
+          </button>
+            
+            
+          <canvas id="canvas1" class="image"  width=504 height=321 style="border: 1px solid #000;"></canvas>
+        </div>
+
+        <div class="overlap22">  
+            <button id="saveButton" class="overlap-2"> <img class="vector" src="img/vector-8.svg" /><div class="text-wrapper">Save</div></button>
+          <canvas id="canvas2" class="image"  width=504 height=321 style="border: 1px solid #000;"></canvas>
+        </div>
+        <div class="overlap-3">
+          <div class="text-wrapper-2">SOFTGRAPHICS</div>
+          <div class="text-wrapper-3">EN</div>
+          <div class="text-wrapper-4">PL</div>
+          <div class="text-wrapper-5">UK</div>
+          <img class="r" src="img/r-2.png" />
+          <div class="home" onclick="location.replace('/main/index.html')">Home</div>
+          <div class="text-wrapper-6" onclick="location.replace('/t1/main_tutorial.html')">Tutorials</div>
+          <div class="text-wrapper-7" onclick="location.replace('/fractals/index.html')">Services</div>
+        </div>
+        <div class="overlap-4">
+          <img class="rectangle" src="img/rectangle-97.svg" />
+          <img class="img" src="img/rectangle-96.svg" />
+          <img class="rectangle-2" src="img/rectangle-95.svg" />
+          <img class="removebg-preview" src="img/removebg-preview-1.png" />
+          <img class="OIP-removebg-preview" src="img/oip-removebg-preview-1.png" />
+          <img
+            class="twitter-icon-white"
+            src="img/twitter-icon-white-transparent-11549537259z0sowbg17j-removebg-pr.png"
+          />
+          <div class="text-wrapper-8">Follow us</div>
+          <div class="copyright"><p class="element-all-rights">© 2023 All Rights Reserved</p></div>
+          <div class="menu-footer">
+            <div class="text-wrapper-9">Privacy Policy</div>
+            <div class="text-wrapper-9">Terms of Use</div>
+            <div class="text-wrapper-9">Legal</div>
+            <div class="text-wrapper-9">Site Map</div>
+          </div>
+          <div class="phone-number"><p class="element">+380 97 056 71 56</p></div>
+          <div class="text-wrapper-10">Call us</div>
+          <img class="line-2" src="img/line-15.svg" />
+          <p class="subscribe-to-stay">
+            Subscribe to stay tuned for new computer graphics and latest updates. Let&#39;s do it!
+          </p>
+          <div class="subscribe">
+            <div class="group">
+              <div class="div-wrapper">
+                <input type="text" class="input-field" placeholder="Enter your email Address">
+              </div>
+            </div>
+            <button class="button">
+              <div class="text-wrapper-32">Subscribe</div>
+            </button>
+          </div>
+        </div>
+        <div class="fractals" onclick="location.replace('/fractals/index.html')">Fractals</div>
+        <div class="text-wrapper-13" onclick="location.replace('/MovingObjects/index.html')">Moving objects</div>
+        <div class="text-wrapper-14">Color models</div>
+        <img class="vector-2" src="img/vector-2.svg" />
+        <img class="vector-3" src="img/vector-2.svg" />
+        <div class="overlap-5">
+          <div class="rectangle-6">
+
+            <p id="coordinates1">Координати пікселя: (0, 0)</p>
+            <p id="colorInfo1">Колір в форматі HSV: (0°, 0%, 0%)</p>
+            <p id="coordinates2">Координати пікселя: (0, 0)</p>
+            <p id="colorInfo2">Колір в форматі HSV: (0°, 0%, 0%)</p>
+
+            
+              <label for="brightness">Яскравість:</label>
+              <input type="range" id="brightness" min="0" max="300" value="100">
+              <span id="brightnessValue">100%</span>
+            
+            
+              <label for="saturation">Насиченість (червоний кольор):</label>
+              <input type="range" id="saturation" min="0" max="300" value="100">
+              <span id="saturationValue">100%</span>
+            
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
+
+    <script>
+      
+      var canvas1 = document.getElementById("canvas1");
+      var canvas2 = document.getElementById("canvas2");
+      var coordinates1 = document.getElementById("coordinates1");
+      var colorInfo1 = document.getElementById("colorInfo1");
+      var coordinates2 = document.getElementById("coordinates2");
+      var colorInfo2 = document.getElementById("colorInfo2");
+      var imageInput = document.getElementById("imageInput");
+      var ctx1 = canvas1.getContext("2d");
+      var ctx2 = canvas2.getContext("2d");
+      var image = new Image();
+      var brightnessInput = document.getElementById("brightness");
+      var saturationInput = document.getElementById("saturation");
+      var saveButton = document.getElementById("saveButton");
+      var loadButton = document.getElementById("loadButton");
+  
+      function getPixelCoordinates1(event) {
+        var x = event.clientX - canvas1.getBoundingClientRect().left;
+        var y = event.clientY - canvas1.getBoundingClientRect().top;
+  
+        var pixel = ctx1.getImageData(x, y, 1, 1).data;
+        var rgb = "rgb(" + pixel[0] + ", " + pixel[1] + ", " + pixel[2] + ")";
+        
+        var hsv = rgbToHsv(pixel[0], pixel[1], pixel[2]);
+        var formattedHsv = `HSV: (${hsv[0]}°, ${hsv[1]}%, ${hsv[2]}%)`;
+        
+        coordinates1.textContent = "Координати пікселя: (" + x + ", " + y + ")";
+        colorInfo1.textContent = "Колір в форматі RGB: " + rgb + " " + formattedHsv;
+      }
+  
+      function getPixelCoordinates2(event) {
+        var x = event.clientX - canvas2.getBoundingClientRect().left;
+        var y = event.clientY - canvas2.getBoundingClientRect().top;
+  
+        var pixel = ctx2.getImageData(x, y, 1, 1).data;
+        var rgb = "rgb(" + pixel[0] + ", " + pixel[1] + ", " + pixel[2] + ")";
+        
+        var hsv = rgbToHsv(pixel[0], pixel[1], pixel[2]);
+        var formattedHsv = `HSV: (${hsv[0]}°, ${hsv[1]}%, ${hsv[2]}%)`;
+        
+        coordinates2.textContent = "Координати пікселя: (" + x + ", " + y + ")";
+        colorInfo2.textContent = "Колір в форматі RGB: " + rgb + " " + formattedHsv;
+      }
+  
+      canvas1.addEventListener("click", getPixelCoordinates1);
+      canvas2.addEventListener("click", getPixelCoordinates2);
+  
+      imageInput.addEventListener("change", function () {
+        var file = imageInput.files[0];
+        if (file) {
+          var reader = new FileReader();
+  
+          reader.onload = function (e) {
+            image.src = e.target.result;
+          };
+  
+          reader.readAsDataURL(file);
+        }
+      });
+  
+      
+
+
+
+
+
+
+
+
+
+image.onload = function () {
+  ctx1.clearRect(0, 0, canvas1.width, canvas1.height);
+  var imageWidth = image.width;
+  var imageHeight = image.height;
+  var canvasWidth = canvas1.width;
+  var canvasHeight = canvas1.height;
+
+  var scaleX = canvasWidth / imageWidth;
+  var scaleY = canvasHeight / imageHeight;
+
+  var scale = Math.min(scaleX, scaleY);
+
+  var newImageWidth = imageWidth * scale;
+  var newImageHeight = imageHeight * scale;
+
+  var x = (canvasWidth - newImageWidth) / 2;
+  var y = (canvasHeight - newImageHeight) / 2;
+
+  ctx1.imageSmoothingEnabled = true;
+  ctx1.drawImage(image, x, y, newImageWidth, newImageHeight);
+
+  ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
+  ctx2.imageSmoothingEnabled = true;
+  ctx2.drawImage(image, x, y, newImageWidth, newImageHeight);
+  brightnessInput.value = 100;
+  saturationInput.value = 100;
+  updateSliderValue("brightnessValue", brightnessInput.value);
+  updateSliderValue("saturationValue", saturationInput.value);
+
+};
+
+
+
+
+  
+      function rgbToHsv(r, g, b) {
+        r /= 255;
+        g /= 255;
+        b /= 255;
+        
+        var max = Math.max(r, g, b);
+        var min = Math.min(r, g, b);
+        var h, s, v = max;
+        
+        var d = max - min;
+        s = max === 0 ? 0 : d / max;
+        
+        if (max == min) {
+          h = 0; 
+        } else {
+          switch (max) {
+            case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+            case g: h = (b - r) / d + 2; break;
+            case b: h = (r - g) / d + 4; break;
+          }
+          h /= 6;
+        }
+        
+        h = Math.round(h * 360);
+        s = Math.round(s * 100);
+        v = Math.round(v * 100);
+        
+        return [h, s, v];
+      }
+  
+      function applyBrightnessAndSaturation(ctx2, brightness, saturation) {
+        var imageData = ctx2.getImageData(0, 0, ctx2.canvas.width, ctx2.canvas.height);
+        var data = imageData.data;
+  
+        for (var i = 0; i < data.length; i += 4) {
+          var r = data[i];
+          var g = data[i + 1];
+          var b = data[i + 2];
+  
+          
+          r = Math.min(255, Math.max(0, r * (brightness / 100)));
+          g = Math.min(255, Math.max(0, g * (brightness / 100)));
+          b = Math.min(255, Math.max(0, b * (brightness / 100)));
+  
+          
+          var hsv = rgbToHsv(r, g, b);
+          var newSaturation = Math.min(100, Math.max(0, hsv[1] * (saturation / 100)));
+          hsv[1] = newSaturation;
+          var newRgb = hsvToRgb(hsv[0], hsv[1], hsv[2]);
+          r = newRgb[0];
+          g = newRgb[1];
+          b = newRgb[2];
+  
+          data[i] = r;
+          data[i + 1] = g;
+          data[i + 2] = b;
+        }
+  
+        ctx2.putImageData(imageData, 0, 0);
+      }
+  
+      function hsvToRgb(h, s, v) {
+        h /= 360;
+        s /= 100;
+        v /= 100;
+  
+        var i = Math.floor(h * 6);
+        var f = h * 6 - i;
+        var p = v * (1 - s);
+        var q = v * (1 - f * s);
+        var t = v * (1 - (1 - f) * s);
+        var r, g, b;
+  
+        switch (i % 6) {
+          case 0: r = v; g = t; b = p; break;
+          case 1: r = q; g = v; b = p; break;
+          case 2: r = p; g = v; b = t; break;
+          case 3: r = p; g = q; b = v; break;
+          case 4: r = t; g = p; b = v; break;
+          case 5: r = v; g = p; b = q; break;
+        }
+  
+        return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
+      }
+  
+      function applyBrightnessToRed(ctx2, brightness, ctx, saturation) {
+      var imageData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
+      var data = imageData.data;
+
+      for (var i = 0; i < data.length; i += 4) {
+        var r = data[i];
+        var g = data[i + 1];
+        var b = data[i + 2];
+
+        // Застосовуємо яскравість лише до червоного кольору
+        if (r > g && r > b) {
+          var hsv = rgbToHsv(r, g, b);
+            var newBrigthness = Math.min(100, Math.max(0, hsv[2] * (brightness / 100)));
+            var newSaturation = Math.min(100, Math.max(0, hsv[1] * (saturation / 100)));
+            hsv[1] = newSaturation;
+            hsv[2] = newBrigthness;
+            var newRgb = hsvToRgb(hsv[0], hsv[1], hsv[2]);
+            r = newRgb[0];
+            g = newRgb[1];
+            b = newRgb[2];
+        }
+
+        data[i] = r;
+        data[i + 1] = g;
+        data[i + 2] = b;
+      }
+
+      ctx2.putImageData(imageData, 0, 0);
+    }
+      function applySaturationToRed(ctx2, saturation, ctx, brightness) {
+        var imageData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
+        var data = imageData.data;
+  
+        for (var i = 0; i < data.length; i += 4) {
+          var r = data[i];
+          var g = data[i + 1];
+          var b = data[i + 2];
+  
+          // Застосовуємо насиченість лише до червоного кольору
+          if (r > g && r > b) {
+            var hsv = rgbToHsv(r, g, b);
+            var newSaturation = Math.min(100, Math.max(0, hsv[1] * (saturation / 100)));
+            hsv[1] = newSaturation;
+            var newBrigthness = Math.min(100, Math.max(0, hsv[2] * (brightness / 100)));
+            hsv[2] = newBrigthness;
+            var newRgb = hsvToRgb(hsv[0], hsv[1], hsv[2]);
+            r = newRgb[0];
+            g = newRgb[1];
+            b = newRgb[2];
+          }
+  
+          data[i] = r;
+          data[i + 1] = g;
+          data[i + 2] = b;
+        }
+  
+        ctx2.putImageData(imageData, 0, 0);
+      }
+
+      loadButton.addEventListener('click', function() {
+       
+        imageInput.click(); 
+      });
+  
+      brightnessInput.addEventListener("input", function () {
+        applyBrightnessToRed(ctx2, brightnessInput.value, ctx1, saturationInput.value);
+        updateSliderValue("brightnessValue", brightnessInput.value);
+      });
+
+      saturationInput.addEventListener("input", function () {
+        applySaturationToRed(ctx2, saturationInput.value, ctx1, brightnessInput.value);
+        updateSliderValue("saturationValue", saturationInput.value);
+      });
+
+      function updateSliderValue(sliderId, value) {
+        document.getElementById(sliderId).textContent = value + "%";
+      }
+
+      
+      saveButton.addEventListener("click", function () {
+        var link = document.createElement("a");
+        link.href = canvas2.toDataURL("image/png");
+        link.download = "canvas2.png";
+        link.click();
+      });
+
+    
+
+      
+    </script>
+  </body>
+</html>

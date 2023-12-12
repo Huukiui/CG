@@ -1,0 +1,975 @@
+.fractals {
+  background-color: #f1f6f9;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.fractals .div {
+  background-color: #f1f6f9;
+  width: 1920px;
+  height: 1080px;
+  position: relative;
+}
+
+.fractals .overlap {
+  position: absolute;
+  width: 1920px;
+  height: 110px;
+  top: 0;
+  left: 0;
+  background-color: #394867;
+}
+
+.fractals .text-wrapper {
+  position: absolute;
+  width: 313px;
+  top: 40px;
+  left: 40px;
+  font-family: "Jacques Francois", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.fractals .text-wrapper-2 {
+  position: absolute;
+  width: 108px;
+  top: 34px;
+  left: 1555px;
+  font-family: "Jacques Francois", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  text-decoration: underline;
+}
+
+.fractals .text-wrapper-3 {
+  position: absolute;
+  width: 108px;
+  top: 34px;
+  left: 1663px;
+  font-family: "Jacques Francois", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.fractals .text-wrapper-4 {
+  position: absolute;
+  width: 108px;
+  top: 34px;
+  left: 1771px;
+  font-family: "Jacques Francois", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.fractals .r {
+  position: absolute;
+  width: 33px;
+  height: 33px;
+  top: 40px;
+  left: 1486px;
+  object-fit: cover;
+}
+
+.fractals .home {
+  position: absolute;
+  width: 86px;
+  height: 23px;
+  top: 40px;
+  left: 682px;
+  font-family: "Jacques Francois", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.fractals .text-wrapper-5 {
+  position: absolute;
+  width: 166px;
+  top: 40px;
+  left: 806px;
+  font-family: "Jacques Francois", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.fractals .text-wrapper-5:hover{
+  cursor: pointer;
+  text-shadow: 0px 4px 4px #00000040;
+  -webkit-text-stroke: 1px #000000;
+  font-family: "Jacques Francois", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  text-decoration: underline;
+}
+.fractals .home:hover{
+  cursor: pointer;
+  text-shadow: 0px 4px 4px #00000040;
+  -webkit-text-stroke: 1px #000000;
+  font-family: "Jacques Francois", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  text-decoration: underline;
+}
+.fractals .text-wrapper-6 {
+  position: absolute;
+  width: 166px;
+  top: 39px;
+  left: 981px;
+  text-shadow: 0px 4px 4px #00000040;
+  -webkit-text-stroke: 1px #000000;
+  font-family: "Jacques Francois", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  text-decoration: underline;
+}
+
+.fractals .img {
+  position: absolute;
+  width: 120px;
+  height: 24px;
+  top: 160px;
+  left: 645px;
+}
+
+.fractals .text-wrapper-7 {
+  position: absolute;
+  width: 243px;
+  top: 150px;
+  left: 1054px;
+  font-family: "Jacques Francois", Helvetica;
+  font-weight: 400;
+  color: #7d8490;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.fractals .text-wrapper-8 {
+  position: absolute;
+  width: 228px;
+  top: 150px;
+  left: 804px;
+  font-family: "Jacques Francois", Helvetica;
+  font-weight: 400;
+  color: #7d8490;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.fractals .vector {
+  top: 132px;
+  left: 790px;
+  position: absolute;
+  width: 3px;
+  height: 74px;
+}
+
+.fractals .vector-2 {
+  top: 135px;
+  left: 1042px;
+  position: absolute;
+  width: 3px;
+  height: 74px;
+}
+
+.fractals .overlap-group {
+  position: absolute;
+  width: 1920px;
+  height: 305px;
+  top: 775px;
+  left: 0;
+}
+
+.fractals .rectangle {
+  position: absolute;
+  width: 1920px;
+  height: 259px;
+  top: 0;
+  left: 0;
+}
+
+.fractals .rectangle-2 {
+  position: absolute;
+  width: 1920px;
+  height: 269px;
+  top: 36px;
+  left: 0;
+}
+
+.fractals .rectangle-3 {
+  position: absolute;
+  width: 1920px;
+  height: 263px;
+  top: 42px;
+  left: 0;
+}
+
+.fractals .removebg-preview {
+  position: absolute;
+  width: 38px;
+  height: 30px;
+  top: 151px;
+  left: 1506px;
+  object-fit: cover;
+}
+
+.fractals .OIP-removebg-preview {
+  position: absolute;
+  width: 50px;
+  height: 34px;
+  top: 150px;
+  left: 1609px;
+  object-fit: cover;
+}
+
+.fractals .twitter-icon-white {
+  position: absolute;
+  width: 31px;
+  height: 32px;
+  top: 151px;
+  left: 1563px;
+  object-fit: cover;
+}
+
+.fractals .text-wrapper-9 {
+  position: absolute;
+  top: 107px;
+  left: 1526px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.fractals .copyright {
+  position: absolute;
+  width: 264px;
+  height: 16px;
+  top: 267px;
+  left: 61px;
+}
+
+.fractals .element-all-rights {
+  position: absolute;
+  height: 23px;
+  top: -4px;
+  left: 0;
+  font-family: "Roboto", Helvetica;
+  font-weight: 300;
+  color: var(--cold-greywhite);
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.fractals .menu-footer {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 40px;
+  position: absolute;
+  top: 267px;
+  left: 1348px;
+}
+
+.fractals .text-wrapper-10 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: var(--cold-greywhite);
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.fractals .phone-number {
+  position: absolute;
+  width: 111px;
+  height: 20px;
+  top: 158px;
+  left: 1688px;
+}
+
+.fractals .element {
+  position: absolute;
+  height: 23px;
+  top: -3px;
+  left: 0;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.fractals .text-wrapper-11 {
+  position: absolute;
+  top: 107px;
+  left: 1691px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.fractals .line {
+  position: absolute;
+  width: 1820px;
+  height: 1px;
+  top: 244px;
+  left: 35px;
+  object-fit: cover;
+}
+
+.fractals .subscribe-to-stay {
+  position: absolute;
+  width: 438px;
+  top: 109px;
+  left: 705px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.fractals .subscribe {
+  display: flex;
+  width: 438px;
+  height: 48px;
+  align-items: center;
+  gap: 16px;
+  position: absolute;
+  top: 176px;
+  left: 705px;
+}
+
+.fractals .group {
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.fractals .div-wrapper {
+  position: relative;
+  width: 299px;
+  height: 48px;
+  background-color: var(--cold-grey10);
+  box-shadow: 0px 8px 24px -4px #ffffff14, 0px 6px 12px -6px #ffffff1f;
+}
+
+.fractals .text-wrapper-12 {
+  position: absolute;
+  width: 290px;
+  height: 18px;
+  top: 14px;
+  left: 9px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: var(--cold-grey30);
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+
+
+.fractals .text-wrapper-13 {
+  position: relative;
+  width: fit-content;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.fractals .overlap-2 {
+  position: absolute;
+  width: 334px;
+  height: 134px;
+  top: 425px;
+  left: 61px;
+  border-radius: 200px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, rgba(42, 53, 77, 0.29) 41.15%, rgba(42, 53, 77, 0) 90.1%);
+
+}
+
+.fractals .rectangle-4 {
+  position: absolute;
+  width: 335px;
+  height: 134px;
+  top: 0;
+  left: 0;
+  border-radius: 200px;
+  background: linear-gradient(180deg, rgba(42, 53, 77, 0.29) 41.15%, rgba(42, 53, 77, 0) 90.1%);
+  background: linear-gradient(180deg, rgb(57, 72, 103) 30.73%, rgba(38.24, 69.83, 133.01, 0) 100%);
+  -webkit-background-clip: text !important;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: transparent;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.fractals .text-wrapper-14 {
+  position: absolute;
+  width: 318px;
+  top: 51px;
+  left: 0;
+  background: linear-gradient(180deg, rgb(57, 72, 103) 30.73%, rgba(38.24, 69.83, 133.01, 0) 100%);
+  -webkit-background-clip: text !important;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: transparent;
+  font-size: 24px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.fractals .rectangle-5 {
+  position: absolute;
+  width: 50px;
+  height: 38px;
+  top: 52px;
+  left: 59px;
+  border: 1px solid;
+  border-color: #dce1eb4a;
+}
+
+.fractals .rectangle-6 {
+  position: absolute;
+  width: 50px;
+  height: 38px;
+  top: 52px;
+  left: 206px;
+  border: 1px solid;
+  border-color: #ffffff4a;
+}
+
+.fractals .rectangle-7 {
+  position: absolute;
+  width: 50px;
+  height: 38px;
+  top: 52px;
+  left: 134px;
+  border: 1px solid;
+  border-color: #fffcfc4a;
+}
+
+.fractals .text-wrapper-15 {
+  position: absolute;
+  width: 40px;
+  top: 93px;
+  left: 64px;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: #b0232391;
+  font-size: 24px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.fractals .text-wrapper-16 {
+  position: absolute;
+  width: 40px;
+  top: 91px;
+  left: 211px;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: #102cc291;
+  font-size: 24px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.fractals .text-wrapper-17 {
+  position: absolute;
+  width: 40px;
+  top: 93px;
+  left: 139px;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: #2fae3b91;
+  font-size: 24px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.fractals .image {
+  width: 94px;
+  height: 89px;
+  top: 22px;
+  left: 245px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.fractals .overlap-3 {
+  position: absolute;
+  width: 799px;
+  height: 134px;
+  top: 257px;
+  left: 61px;
+  border-radius: 200px;
+  background: linear-gradient(180deg, rgba(42, 53, 77, 0.29) 41.15%, rgba(42, 53, 77, 0) 90.1%);
+}
+
+.fractals .text-wrapper-18 {
+  position: absolute;
+  width: 318px;
+  top: 51px;
+  left: 227px;
+  background: linear-gradient(180deg, rgb(57, 72, 103) 30.73%, rgba(38.24, 69.83, 133.01, 0) 100%);
+  -webkit-background-clip: text !important;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: rgb(89, 89, 128);
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.fractals .polygon {
+  position: absolute;
+  width: 42px;
+  height: 33px;
+  top: 58px;
+  left: 629px;
+}
+
+.fractals .rectangle-8 {
+  position: absolute;
+  width: 799px;
+  height: 134px;
+  top: 0;
+  left: 0;
+  border-radius: 200px;
+  background: linear-gradient(180deg, rgba(42, 53, 77, 0.29) 41.15%, rgba(42, 53, 77, 0) 90.1%);
+  background: linear-gradient(180deg, rgb(57, 72, 103) 30.73%, rgba(38.24, 69.83, 133.01, 0) 100%);
+  -webkit-background-clip: text !important;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: transparent;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.fractals .overlap-4 {
+  position: absolute;
+  width: 799px;
+  height: 134px;
+  top: 597px;
+  left: 61px;
+  border-radius: 200px;
+  background: linear-gradient(180deg, rgba(42, 53, 77, 0.29) 41.15%, rgba(42, 53, 77, 0) 90.1%);
+}
+
+.fractals .text-wrapper-19 {
+  position: absolute;
+  width: 318px;
+  top: 44px;
+  left: 227px;
+  background: linear-gradient(180deg, rgb(57, 72, 103) 30.73%, rgba(38.24, 69.83, 133.01, 0) 100%);
+  -webkit-background-clip: text !important;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: transparent;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.fractals .overlap-5 {
+  position: absolute;
+  width: 250px;
+  height: 134px;
+  top: 429px;
+  left: 610px;
+  border-radius: 200px;
+  background: linear-gradient(180deg, rgba(42, 53, 77, 0.29) 41.15%, rgba(42, 53, 77, 0) 90.1%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fractals .overlap-10 {
+  position: absolute;
+  width: 200px;
+  height: 134px;
+  top: 429px;
+  left: 405px;
+  border-radius: 200px;
+  background: linear-gradient(180deg, rgba(42, 53, 77, 0.29) 41.15%, rgba(42, 53, 77, 0) 90.1%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.slider-container {
+  text-align: center;
+}
+
+.fractals .text-wrapper-20 {
+  position: absolute;
+  width: 318px;
+  top: 10px;
+  
+  background: linear-gradient(180deg, rgb(57, 72, 103) 30.73%, rgba(38.24, 69.83, 133.01, 0) 100%);
+  -webkit-background-clip: text !important;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: transparent;
+  font-size: 24px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.fractals .text-wrapper-21 {
+  position: absolute;
+  width: 318px;
+  top: 83px;
+  left: 12px;
+  background: linear-gradient(180deg, rgb(57, 72, 103) 30.73%, rgba(38.24, 69.83, 133.01, 0) 100%);
+  -webkit-background-clip: text !important;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: transparent;
+  font-size: 24px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.fractals .overlap-6 {
+  position: absolute;
+  width: 235px;
+  height: 17px;
+  top: 63px;
+  left: 50px;
+}
+
+.fractals .rectangle-9 {
+  position: absolute;
+  width: 235px;
+  height: 8px;
+  top: 4px;
+  left: 0;
+  border-radius: 200px;
+  border: 0.3px solid;
+  border-color: #000000b2;
+}
+
+.fractals .rectangle-10 {
+  position: absolute;
+  width: 112px;
+  height: 8px;
+  top: 4px;
+  left: 0;
+  border-radius: 200px;
+  border: 0.3px solid;
+  border-color: #000000b2;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 54.69%, rgba(0, 0, 0, 0) 100%);
+}
+
+.fractals .ellipse {
+  position: absolute;
+  width: 18px;
+  height: 17px;
+  top: 0;
+  left: 106px;
+  border-radius: 9px/8.5px;
+  background: linear-gradient(180deg, rgba(39.58, 75.31, 131.95, 0) 9.9%, rgba(39.58, 75.31, 131.95, 0.5) 45.83%);
+}
+
+.fractals .image-wrapper {
+  position: absolute;
+  width: 750px;
+  height: 600px;
+  top: 229px;
+  left: 1143px;
+  background-color: #2b768e33;
+  border-radius: 20px;
+}
+
+.fractals .image-2 {
+  width: 700px;
+  height: 550px;
+  top: 20px;
+  left: 20px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.fractals .text-wrapper-2:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+.fractals .text-wrapper-3:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+.fractals .text-wrapper-4:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+.fractals .text-wrapper-10:hover{
+  cursor: pointer;
+}
+.fractals .fractal{
+  position: absolute;
+  width: 120px;
+  height: 24px;
+  top: 150px;
+  left: 645px;
+  -webkit-text-stroke: 1px #a5acb9;
+  font-family: "Jacques Francois", Helvetica;
+  font-weight: 400;
+  color: #7d8490;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.fractals .text-wrapper-7:hover{
+  cursor: pointer;
+  -webkit-text-stroke: 1px #a5acb9;
+  font-family: "Jacques Francois", Helvetica;
+  font-weight: 400;
+  color: #7d8490;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+.fractals .text-wrapper-8:hover{
+  cursor: pointer;
+  -webkit-text-stroke: 1px #a5acb9;
+  font-family: "Jacques Francois", Helvetica;
+  font-weight: 400;
+  color: #7d8490;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+
+
+.input-field {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: var(--cold-grey30);
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+  padding-left: 9px; /* Додали відступ для тексту в полі вводу */
+  box-sizing: border-box;
+}
+
+
+
+.fractals .text-wrapper-32 {
+  position: relative;
+  width: fit-content;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.fractals .button {
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #000000;
+  padding: 5px 26px;
+  cursor: pointer;
+}
+
+.rectangle-8 option {
+  /* Стилізуємо варіанти випадаючого списку */
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000; /* Змініть колір тексту для варіантів */
+  font-size: 16px;
+}
+
+/* Стилізуємо сам слайдер */
+#slider {
+  width: 100%;
+}
+
+/* Стилізуємо текстове значення під слайдером */
+#slider-value {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+
+.fractals .rectangle-55 {
+  position: absolute;
+  width: 60px;
+  height: 38px;
+  top: 52px;
+  left: 65px;
+  border: 1px solid;
+  border-color: #dce1eb4a;
+  text-align: center;
+}
+
+.fractals .overlap-44 {
+  position: absolute;
+  width: 200px;
+  height: 134px;
+  top: 597px;
+  left: 900px;
+  border-radius: 200px;
+  background: linear-gradient(180deg, rgba(42, 53, 77, 0.29) 41.15%, rgba(42, 53, 77, 0) 90.1%);
+}
+
+.fractals .text-wrapper-199 {
+  position: absolute;
+  width: 200px; /* Змініть на потрібну ширину кнопки overlap-44 */
+  height: 134px;
+  top: 44px;
+  left: 0px; /* Змініть на потрібну позицію left для кнопки overlap-44 */
+  background: linear-gradient(180deg, rgb(57, 72, 103) 30.73%, rgba(38.24, 69.83, 133.01, 0) 100%);
+  -webkit-background-clip: text !important;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: transparent;
+  font-size: 32px;
+}
+
+.fractals .text-wrapper-188 {
+  position: absolute;
+  width: 318px;
+  top: 257px;
+  left: 0px;
+  background: linear-gradient(180deg, rgb(57, 72, 103) 30.73%, rgba(38.24, 69.83, 133.01, 0) 100%);
+  -webkit-background-clip: text !important;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: rgb(89, 89, 128);
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}

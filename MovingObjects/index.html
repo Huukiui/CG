@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="styleguide.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="moving-objects">
+      <div class="div">
+        <div class="overlap">
+          <div class="text-wrapper">SOFTGRAPHICS</div>
+          <div class="text-wrapper-2">EN</div>
+          <div class="text-wrapper-3">PL</div>
+          <div class="text-wrapper-4">UK</div>
+          <img class="r" src="img/r-4.png" />
+          <div class="home" onclick="location.replace('/main/index.html')">Home</div>
+          <div class="text-wrapper-5" onclick="location.replace('/t1/main_tutorial.html')">Tutorials</div>
+          <div class="text-wrapper-6" onclick="location.replace('/fractals/index.html')">Services</div>
+        </div>
+        <div class="fractals" onclick="location.replace('/fractals/index.html')">Fractals</div>
+        <div class="text-wrapper-7">Moving objects</div>
+        <div class="text-wrapper-8" onclick="location.replace('/colors/index.html')">Color models</div>
+        <img class="vector" src="img/vector-6.svg" />
+        <img class="img" src="img/vector-6.svg" />
+        <div class="overlap-group">
+          <img class="rectangle" src="img/rectangle-101.svg" />
+          <img class="rectangle-2" src="img/rectangle-102.svg" />
+          <img class="rectangle-3" src="img/rectangle-103.svg" />
+          <img class="removebg-preview" src="img/removebg-preview-3.png" />
+          <img class="OIP-removebg-preview" src="img/oip-removebg-preview-3.png" />
+          <img
+            class="twitter-icon-white"
+            src="img/twitter-icon-white-transparent-11549537259z0sowbg17j-removebg-pr.png"
+          />
+          <div class="text-wrapper-9">Follow us</div>
+          <div class="copyright"><p class="element-all-rights">© 2023 All Rights Reserved</p></div>
+          <div class="menu-footer">
+            <div class="text-wrapper-10">Privacy Policy</div>
+            <div class="text-wrapper-10">Terms of Use</div>
+            <div class="text-wrapper-10">Legal</div>
+            <div class="text-wrapper-10">Site Map</div>
+          </div>
+          <div class="phone-number"><p class="element">+380 97 056 71 56</p></div>
+          <div class="text-wrapper-11">Call us</div>
+          <img class="line" src="img/line-17.svg" />
+          <p class="subscribe-to-stay">
+            Subscribe to stay tuned for new computer graphics and latest updates. Let&#39;s do it!
+          </p>
+          <div class="subscribe">
+            <div class="group">
+              <div class="div-wrapper">
+                <input type="text" class="input-field" placeholder="Enter your email Address">
+              </div>
+            </div>
+            <button class="button">
+              <div class="text-wrapper-32">Subscribe</div>
+            </button>
+          </div>
+        </div>
+        <div class="overlap-2">
+          <div class="text-wrapper-14">Coordinates for Triangle</div>
+          <div class="text-wrapper-15">X:</div>
+          
+          <div class="text-wrapper-19">Y:</div>
+          
+          <input type="number" class="line-2" id="x1" placeholder="Enter X1"/>
+          <input type="number" class="line-3" id="x3" placeholder="Enter X3"/>
+          <input type="number" class="line-4" id="x2" placeholder="Enter X2"/>
+          <input type="number" class="line-5" id="y1" placeholder="Enter Y1"/>
+          <input type="number" class="line-6" id="y3" placeholder="Enter Y3"/>
+          <input type="number" class="line-7" id="y2" placeholder="Enter Y2"/>
+        </div>
+        
+        <div class="overlap-5">
+          <div class="text-wrapper-29">Triangle scale</div>
+          <input type="number" class="line-77" id="TriangleScale" placeholder="Triangle scale"/>
+        </div>
+        <div class="overlap-55">
+          <div class="text-wrapper-2929">Coordinates scale</div>
+          <select class="line-777" id="CoordinatesSacle">
+            <option value="1">Add</option>
+            <option value="0.5">Reduce</option>
+          </select>
+          
+        </div>
+        <button onclick="drawTriangleButton()" class="overlap-7"><div class="text-wrapper-31">Draw triangle</div></button>
+        <button onclick="move_test()" class="overlap-77"><div class="text-wrapper-31">Move triangle</div></button>
+        <button onclick="testMirrorTransform()" class="overlap-777"><div class="text-wrapper-31">Flip triangle</div></button>
+        <button onclick="testScale()" class="overlap-7777"><div class="text-wrapper-31">Scale triangle</div></button>
+        <button onclick="scaleCoordinatPlateFunction()" class="overlap-77777"><div class="text-wrapper-31">Scale coordinates</div></button>
+        <button onclick=" saveToImage()" class="overlap-777777"><div class="text-wrapper-31">Save to image</div></button>
+        <canvas class="image" id="coordinateCanvas" width="500" height="500"></canvas>
+      </div>
+    </div>
+    <script>
+
+const scaleFactorInput = document.getElementById('TriangleScale');
+//змінна фактор на скільки буде масштабуватися трикутник
+let scaleFactor = parseFloat(scaleFactorInput.value) || 1;
+//матриця афінних перетворень для масштабувавання трикутника
+var mat_transform = [[scaleFactor, 0, 0], [0, scaleFactor, 0], [0, 0, 1]];
+//матриця афінних перетворень для віддзеркалення трикутника
+const mirror_transform = [[0, 1, 0], [1, 0, 0], [0, 0, 1]];
+//функція для множення матриць, в душі не їбу як вона працює, якась магія JS
+scaleFactorInput.addEventListener('input', function() {
+    // Отримуємо нове значення з поля введення
+    const newScaleValue = parseFloat(scaleFactorInput.value) || 1; // Якщо не введено, то залишаємо попереднє значення
+    
+    // Перевірка чи введено коректне число
+    if (!isNaN(newScaleValue)) {
+        // Оновлюємо scaleFactor та матрицю афінних перетворень
+        scaleFactor = newScaleValue;
+        mat_transform = [[scaleFactor, 0, 0], [0, scaleFactor, 0], [0, 0, 1]];
+        
+        // Виводимо результат в консоль (можна замінити на іншу обробку)
+        console.log('Scale Factor:', scaleFactor);
+        console.log('Scaled Matrix:', scaledMatrix);
+    }
+});
+function matrixMultiply(matrix, vector)
+{
+    return matrix.map(row => row.reduce((sum, val, i) => sum + val * vector[i], 0));
+}
+//матриця для перемноження вектора з координатами трикутника на матрицю афінних перевторень
+function transformedPoints(points)
+{
+    points.map(point => {
+        const {x, y} = point;
+        const [x_s, y_s] = matrixMultiply(mat_transform, [x, y, 1]);
+        return {x_s, y_s};
+    })
+}
+//змінні координати трикутника
+let x1;
+let y1;
+let x2;
+let y2;
+let x3;
+let y3;
+//змінні для "швидкості руху" трикутника
+let stepX = 0.1;
+let stepY = 0.1;
+let scaleCoordinatPlate = 1;
+let scaleTriangle = 0.5;
+let scale = 2;
+const coordinatesScaleSelect = document.getElementById('CoordinatesSacle');
+
+// Додаємо слухач події change
+coordinatesScaleSelect.addEventListener('change', function() {
+    // Отримуємо вибране значення
+    const selectedValue = parseFloat(coordinatesScaleSelect.value);
+
+    // Перевірка чи вибране значення є числом
+    if (!isNaN(selectedValue)) {
+        // Оновлюємо scaleCoordinatPlate та scaleTriangle
+        if (selectedValue === 1) {
+            scale = 2;
+            scaleTriangle = 0.5;
+        } else if (selectedValue === 0.5) {
+            scale = 0.5;
+            scaleTriangle = 2;
+        }
+
+        
+
+        // Виводимо результат в консоль (можна замінити на іншу обробку)
+        console.log('Selected Scale:', scaleCoordinatPlate);
+    }
+});
+//функція яка виконує роль Sleep() у нормальних мовах
+const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay));
+
+//функція для зміни масштабу координатної площини, перемножує коофіцієнти на координати точок та малює саму площину, де змінюються значення позначок 
+function scaleCoordinatPlateFunction()
+{
+    const canvas = document.getElementById('coordinateCanvas');
+    const context = canvas.getContext('2d');
+
+    scaleCoordinatPlate = scaleCoordinatPlate * scale;
+
+    drawCoordinatePlane();
+
+    x1 = x1  * scaleTriangle;
+    x2 = x2 * scaleTriangle;
+    x3 = x3 * scaleTriangle;
+    y1 = y1 * scaleTriangle;
+    y2 = y2 * scaleTriangle;
+    y3 = y3 * scaleTriangle;
+
+    context.beginPath();
+    context.moveTo(canvas.width / 2 + x1 * 30, canvas.height / 2 - y1 * 30);
+    context.lineTo(canvas.width / 2 + x2 * 30, canvas.height / 2 - y2 * 30);
+    context.lineTo(canvas.width / 2 + x3 * 30, canvas.height / 2 - y3 * 30);
+    context.closePath();
+    context.strokeStyle = 'green';
+    context.stroke();
+}
+let isRunning = false;
+//функція для руху трикутника, яка працює постійно в циклі while(true)
+async function move_test()
+{
+  if(isRunning){
+    isRunning = false;
+  }
+  else{
+    isRunning = true;
+  }
+    let i = 0;
+
+    while(isRunning)
+    {
+
+    const canvas = document.getElementById('coordinateCanvas');
+    const context = canvas.getContext('2d');
+
+    if(x1 * 30 >= canvas.width / 2 || x2 * 30 >= canvas.width / 2 || x3 * 30 >= canvas.width / 2)
+        stepX = -stepX;
+    if(x1 * 30 <= (canvas.width / 2) * -1 || x2 * 30 <= (canvas.width / 2) * -1 || x3 * 30 <= (canvas.width / 2) * -1)
+        stepX = -stepX;
+    if(y1 * 30 <= (canvas.height / 2) * -1 || y2 * 30 <= (canvas.height / 2) * -1 || y3 * 30 <= (canvas.height / 2) * -1)
+        stepY = -stepY;
+    if(y1 * 30 >= canvas.height / 2 || y2 * 30 >= canvas.height / 2 || y3 * 30 >= canvas.height / 2)
+        stepY = -stepY;
+
+
+    context.clearRect(0, 0, canvas.width, canvas.height);
+
+    drawCoordinatePlane();
+
+    x1 = x1 + stepX;
+    x2 = x2 + stepX;
+    x3 = x3 + stepX;
+    y1 = y1 + stepY;
+    y2 = y2 + stepY;
+    y3 = y3 + stepY;
+
+    
+    context.beginPath();
+    context.moveTo(canvas.width / 2 + x1 * 30, canvas.height / 2 - y1 * 30);
+    context.lineTo(canvas.width / 2 + x2 * 30, canvas.height / 2 - y2 * 30);
+    context.lineTo(canvas.width / 2 + x3 * 30, canvas.height / 2 - y3 * 30);
+    context.closePath();
+    context.strokeStyle = 'green';
+    context.stroke();
+
+    i = i + 1;
+
+    
+
+    await sleep(100);
+
+    }
+}
+
+//функція для виконання афінних перетворень відносно осі X = Y
+function testMirrorTransform()
+{
+    const canvas = document.getElementById('coordinateCanvas');
+    const context = canvas.getContext('2d');
+
+    context.clearRect(0, 0, canvas.width, canvas.height);
+
+    drawCoordinatePlane();
+
+    //-------
+    //тут виконується обрахунок нових точок трикутника
+    const points =
+    [{x: x1, y:y1},
+    {x: x2, y:y2},
+    {x: x3, y: y3}];
+
+    let trnsPoints = points.map(point => {
+        const { x, y } = point;
+        const [x_s, y_s] = matrixMultiply(mirror_transform, [x, y, 1]);
+        return { x_s, y_s};
+    });
+    //--------
+
+    console.log(trnsPoints[0]);
+    console.log(trnsPoints[1]);
+    console.log(trnsPoints[2]);
+
+    context.beginPath();
+    context.moveTo(canvas.width / 2 + trnsPoints[0].x_s * 30, canvas.height / 2 - trnsPoints[0].y_s * 30);
+    context.lineTo(canvas.width / 2 + trnsPoints[1].x_s * 30, canvas.height / 2 - trnsPoints[1].y_s * 30);
+    context.lineTo(canvas.width / 2 + trnsPoints[2].x_s * 30, canvas.height / 2 - trnsPoints[2].y_s * 30);
+    context.closePath();
+    context.strokeStyle = 'green';
+    context.stroke();
+
+    x1 = trnsPoints[0].x_s;
+    x2 = trnsPoints[1].x_s;
+    x3 = trnsPoints[2].x_s;
+
+    y1 = trnsPoints[0].y_s;
+    y2 = trnsPoints[1].y_s;
+    y3 = trnsPoints[2].y_s;
+}
+
+//функція для зміни розмірів трикутника через афінні перетворення
+function testScale()
+{
+    const canvas = document.getElementById('coordinateCanvas');
+    const context = canvas.getContext('2d');
+
+    context.clearRect(0, 0, canvas.width, canvas.height);
+
+    drawCoordinatePlane();
+
+    //----------------
+    //знову таки ж, тут обраховуються нові точки
+    const points =
+    [{x: x1, y:y1},
+    {x: x2, y:y2},
+    {x: x3, y: y3}];
+
+    let trnsPoints = points.map(point => {
+        const { x, y } = point;
+        const [x_s, y_s] = matrixMultiply(mat_transform, [x, y, 1]);
+        return { x_s, y_s};
+    });
+    //------------------
+
+    console.log(trnsPoints[0]);
+    console.log(trnsPoints[1]);
+    console.log(trnsPoints[2]);
+
+    context.beginPath();
+    context.moveTo(canvas.width / 2 + trnsPoints[0].x_s * 30, canvas.height / 2 - trnsPoints[0].y_s * 30);
+    context.lineTo(canvas.width / 2 + trnsPoints[1].x_s * 30, canvas.height / 2 - trnsPoints[1].y_s * 30);
+    context.lineTo(canvas.width / 2 + trnsPoints[2].x_s * 30, canvas.height / 2 - trnsPoints[2].y_s * 30);
+    context.closePath();
+    context.strokeStyle = 'green';
+    context.stroke();
+
+    x1 = trnsPoints[0].x_s;
+    x2 = trnsPoints[1].x_s;
+    x3 = trnsPoints[2].x_s;
+
+    y1 = trnsPoints[0].y_s;
+    y2 = trnsPoints[1].y_s;
+    y3 = trnsPoints[2].y_s;
+}
+
+//функція для малювання координатної площини
+function drawCoordinatePlane() {
+    const canvas = document.getElementById('coordinateCanvas');
+    const context = canvas.getContext('2d');
+
+    context.clearRect(0, 0, canvas.width, canvas.height);
+
+    
+    context.beginPath();
+    context.moveTo(0, canvas.height / 2);
+    context.lineTo(canvas.width, canvas.height / 2);
+    context.strokeStyle = '#333';
+    context.stroke();
+
+    
+    context.beginPath();
+    context.moveTo(canvas.width / 2, 0);
+    context.lineTo(canvas.width / 2, canvas.height);
+    context.stroke();
+
+    
+    context.beginPath();
+    context.arc(canvas.width / 2, canvas.height / 2, 3, 0, 2 * Math.PI);
+    context.fillStyle = 'red';
+    context.fill();
+
+    drawStepMarkings(context, canvas.width / 2, canvas.height / 2, canvas.width, 'x');
+
+    drawStepMarkings(context, canvas.width / 2, canvas.height / 2, canvas.height, 'y');
+}
+
+//функція для малювання позначок на координатній площині, зміни по масшатбу відбуваються тут перед переводом i до стрічки,
+// коли відбувається множення на scaleCoordinatePlate
+function drawStepMarkings(context, originX, originY, length, axis) {
+    const step = 30; 
+
+    context.font = '10px Arial';
+    context.fillStyle = '#333';
+
+    for (let i = step; i < length / 2; i += step) {
+
+        if (axis === 'x') {
+            context.beginPath();
+            context.moveTo(originX + i, originY - 5);
+            context.lineTo(originX + i, originY + 5);
+            context.stroke();
+            context.fillText(((i / 30) * scaleCoordinatPlate).toString(), originX + i - 5, originY + 20);
+        } else if (axis === 'y') {
+            context.beginPath();
+            context.moveTo(originX - 5, originY - i);
+            context.lineTo(originX + 5, originY - i);
+            context.stroke();
+            context.fillText(((i / 30) * scaleCoordinatPlate).toString(), originX - 25, originY - i + 5);
+        }
+
+        if (i !== 0) {
+            if (axis === 'x') {
+                context.beginPath();
+                context.moveTo(originX - i, originY - 5);
+                context.lineTo(originX - i, originY + 5);
+                context.stroke();
+                context.fillText(((-i / 30) * scaleCoordinatPlate).toString(), originX - i - 10, originY + 20);
+            } else if (axis === 'y') {
+                context.beginPath();
+                context.moveTo(originX - 5, originY + i);
+                context.lineTo(originX + 5, originY + i);
+                context.stroke();
+                context.fillText(((-i / 30) * scaleCoordinatPlate).toString(), originX - 25, originY + i + 5);
+            }
+        }
+    }
+}
+
+//функція для малювання трикутника в канвасі
+function drawTriangleButton() {
+    const canvas = document.getElementById('coordinateCanvas');
+    const context = canvas.getContext('2d');
+
+    context.clearRect(0, 0, canvas.width, canvas.height);
+
+    drawCoordinatePlane();
+
+    x1 = parseFloat(document.getElementById('x1').value);
+    y1 = parseFloat(document.getElementById('y1').value);
+    x2 = parseFloat(document.getElementById('x2').value);
+    y2 = parseFloat(document.getElementById('y2').value);
+    x3 = parseFloat(document.getElementById('x3').value);
+    y3 = parseFloat(document.getElementById('y3').value);
+
+    var a = scaleCoordinatPlate;
+    if(a < 1){
+     while(a < 1){
+      a = a * 2;
+      x1 = x1 * scaleTriangle;
+      x2 = x2 * scaleTriangle;
+      x3 = x3 * scaleTriangle;
+      y1 = y1 * scaleTriangle;
+      y2 = y2 * scaleTriangle;
+      y3 = y3 * scaleTriangle;
+     } 
+    }else{
+      while(a > 1){
+      a = a / 2;
+      x1 = x1 * scaleTriangle;
+      x2 = x2 * scaleTriangle;
+      x3 = x3 * scaleTriangle;
+      y1 = y1 * scaleTriangle;
+      y2 = y2 * scaleTriangle;
+      y3 = y3 * scaleTriangle;
+     } 
+    }
+
+    context.beginPath();
+    context.moveTo(canvas.width / 2 + x1 * 30, canvas.height / 2 - y1 * 30);
+    context.lineTo(canvas.width / 2 + x2 * 30, canvas.height / 2 - y2 * 30);
+    context.lineTo(canvas.width / 2 + x3 * 30, canvas.height / 2 - y3 * 30);
+    context.closePath();
+    context.strokeStyle = 'blue';
+    context.stroke();
+}
+
+window.onload = drawCoordinatePlane;
+function saveToImage() {
+    const canvas = document.getElementById('coordinateCanvas');
+    const context = canvas.getContext('2d');
+    const originalBackgroundColor = context.fillStyle;
+    const image = canvas.toDataURL(); 
+    context.fillStyle = originalBackgroundColor;
+
+    const link = document.createElement('a');
+    link.href = image;
+    link.download = 'canvas_image.png'; 
+
+    link.click();
+}
+    </script>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="TestStyles.css">
+
+    <title>Fractal quiz</title>
+</head>
+
+<body>
+    <div class="tutorial">
+        <div class="div">
+          <div class="overlap">
+            <div class="text-wrapper">SOFTGRAPHICS</div>
+            <div class="text-wrapper-2">EN</div>
+            <div class="text-wrapper-3">PL</div>
+            <div class="text-wrapper-4">UK</div>
+            <img class="r" src="img/r-4.png" />
+            <div class="home" onclick="location.replace('/main/index.html')">Home</div>
+            <div class="text-wrapper-5" onclick="location.replace('/t2/index.html')">Tutorials</div>
+            <div class="text-wrapper-6" onclick="location.replace('/fractals/index.html')">Services</div>
+          </div>
+          <div class="overlap-group">
+            <img class="rectangle" src="img/rectangle-98.svg" />
+            <img class="img" src="img/rectangle-99.svg" />
+            <img class="rectangle-2" src="img/rectangle-100.svg" />
+            <img class="removebg-preview" src="img/removebg-preview-2.png" />
+            <img class="OIP-removebg-preview" src="img/oip-removebg-preview-2.png" />
+            <img
+              class="twitter-icon-white"
+              src="img/twitter-icon-white-transparent-11549537259z0sowbg17j-removebg-pr.png"
+            />
+            <div class="text-wrapper-7">Follow us</div>
+            <div class="copyright"><p class="element-all-rights">© 2023 All Rights Reserved</p></div>
+            <div class="menu-footer">
+              <div class="text-wrapper-8">Privacy Policy</div>
+              <div class="text-wrapper-8">Terms of Use</div>
+              <div class="text-wrapper-8">Legal</div>
+              <div class="text-wrapper-8">Site Map</div>
+            </div>
+            <div class="phone-number"><p class="element">+380 97 056 71 56</p></div>
+            <div class="text-wrapper-9">Call us</div>
+            <img class="line" src="img/line-16.svg" />
+            <p class="subscribe-to-stay">
+              Subscribe to stay tuned for new computer graphics and latest updates. Let&#39;s do it!
+            </p>
+            <div class="subscribe">
+              <div class="group">
+                <div class="div-wrapper">
+                  <input type="text" class="input-field" placeholder="Enter your email Address">
+                </div>
+              </div>
+              <button class="button">
+                <div class="text-wrapper-11">Subscribe</div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- Further code here -->
+    <div class="start-screen">
+        <button id="start-button">Start</button>
+    </div>
+    <div id="display-container">
+        <div class="header">
+            <div class="number-of-count">
+                <span class="number-of-question">1 of 3 questions</span>
+            </div>
+            <div class="timer-div">
+                <img src="https://uxwing.com/wp-content/themes/uxwing/download/time-and-date/stopwatch-icon.png"
+                    width="20px" />
+                <span class="time-left">10s</span>
+            </div>
+        </div>
+        <div id="container">
+            <!-- questions and options will be displayed here -->
+        </div>
+        <button id="next-button">Next</button>
+    </div>
+    <div class="score-container hide">
+        <div id="user-score">Demo Score</div>
+        <button id="restart">Restart</button>
+    </div>
+    <script src="FractalTest.js"></script>
+</body>
+
+</html>
